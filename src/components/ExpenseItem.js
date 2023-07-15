@@ -1,11 +1,19 @@
-function ExpenseItem(){
-    return (
-        <div>
-            <div>July 15 2023</div>
-            <div>Electricity Bill</div>
-            <div>$30.00</div>
-        </div>
-    );
+import "./ExpenseItem.css";
+
+function ExpenseItem() {
+    const expenseDate= new Date(2023, 6, 15);
+    const expenseTitle='Electricity Bill';
+    const expenseAmount=299.99;
+
+  return (
+    <div className="expense-item">
+      <div>{expenseDate.toISOString()}</div>
+      <div className="expense-item__description">
+        <h2>{expenseTitle}</h2>
+        <div className="expense-item__price">${expenseAmount}</div>
+      </div>
+    </div>
+  );
 }
 
 export default ExpenseItem;
